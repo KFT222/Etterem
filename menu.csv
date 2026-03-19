@@ -1,7 +1,9 @@
-pizza;2270 
-cola;690 
-fanta;690
-víz;390 
-hamburger;1890 
-gyros;2190 
-saláta;1500
+fő;pizza;2270 
+ital;cola;690 
+ital;fanta;690
+ital;víz;390 
+fő;hamburger;1890 
+fő;gyros;2190 
+fő;saláta;1790
+desz;brownie;2000
+desz;mézeskalács;500
