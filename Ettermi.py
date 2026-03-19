@@ -120,7 +120,18 @@ elif muvelet=="menu":
     if muv=="új":
         plusz=input("Termék neve: ")
         ár=input("Ára: ")
- 
+        x=["paradicsom","olíviabogyó","szósz","hús","vegyessaláta","liszt"]
+        while True:
+            hozzavalok=input("Miből álljon a hozzavalok?: (paradicsom/olíviabogyó/szosz/hus/vegyessalata/liszt) 0=kilepes")
+            if hozzavalok==0:
+                break
+            if hozzavalok not in x:
+                hozzavalok=input("Csak a listabol válassz: (paradicsom/olíviabogyó/szosz/hus/vegyessalata/liszt)")
+                continue
+            mennyiseg=input(f"Mennyi  legyen a(z){hozzavalok}?pl:(100): ")
+            with open("recept.csv", "a", encoding="utf-8") as recept:
+                recept.write(hozzavalok +(";") + mennyiseg+ "\n")
+        
         with open("menu.csv", "a", encoding="utf-8") as hozz:
             hozz.write("\n" + plusz + ";" + ár)
 
