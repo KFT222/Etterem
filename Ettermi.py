@@ -11,8 +11,9 @@ class Rendeles:
         self.statusz="lezárt"
 
 
-# Menü betöltése
+
 def menu_betolt():
+    """Menü(lista) betöltése"""
     menu=[]
     with open("menu.csv", "r", encoding="utf-8") as sorok:
         for sor in sorok:
@@ -24,8 +25,9 @@ def menu_betolt():
     return menu
 
 
-# raktár betöltése
+
 def raktar_betolt():
+    """raktár(lista) betöltése"""
     raktar=[]
     with open("raktar.csv", "r", encoding="utf-8") as sorok:
         for sor in sorok:
@@ -37,9 +39,9 @@ def raktar_betolt():
     return raktar
 
 
-# Vásárlások betöltése
-# Vásárló neve;Felszolgáló neve;függőben/pénz;termékek
+
 def vasarlasok_betolt():
+    """ Vásárlások betöltése;Vásárló neve;Felszolgáló neve;függőben/pénz;termékek"""
     vasarlasok=[]
     with open("vasarlasok.csv", "r", encoding="utf-8") as sorok:
         for sor in sorok:
@@ -53,12 +55,14 @@ def vasarlasok_betolt():
 
 
 def raktar_ment(raktar):
+     """Raktar mentése a Raktár.csv fájlba"""
     with open("raktar.csv", "w", encoding="utf-8") as sorok:
         for nev, db in raktar:
             sorok.write(f"{nev};{db}\n")
 
 
 def raktar_csokkent(termek, db, raktar):
+    """Raktár csokkentése a Raktar.csv"""
     with open("recept.csv", "r", encoding="utf-8") as f:
         for sor in f:
             etel, alapanyag, menny=sor.strip().split(";")
